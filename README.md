@@ -12,7 +12,7 @@ conda create -v ./env python=3.8
 conda activate ./env
 ```
 
-2. install **cvxpy** library
+2. install [**cvxpy**](https://www.cvxpy.org/#) library
 
 ```bash
 conda install -c conda-forge cvxpy
