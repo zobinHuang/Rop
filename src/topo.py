@@ -1,5 +1,4 @@
 import numpy as np
-from yaml import nodes
 from src.node import node
 
 # class:        topo
@@ -7,11 +6,15 @@ from src.node import node
 class topo:
     # function:     __init__()
     # description:  initialization function of a topo object
-    # parameters:   topo_size: number of vertex in the graph
+    # parameters:   topo_size:      number of vertex in the graph
+    #               is_bilateral:   whether bilateral link supported
     # return value: none
-    def __init__(self, topo_size:int):
+    def __init__(self, topo_size:int, is_bilateral:bool):
         # size of topology (amount of nodes)
         self.size = topo_size
+
+        # whether bilateral link supported
+        self.bilateral = is_bilateral
 
         # list of node objects
         self.node_list = list()
@@ -46,11 +49,22 @@ class topo:
     def add_link(self, src_node:int, dest_node:int, weight:int=1):
         self.topo_matrix[src_node, dest_node] = weight
 
-    
-
     # function:     print_topo()
     # description:  print topology as adjacency matrix
     # parameters:   none
     # return value: none
     def print_topo(self):
         print(self.topo_matrix)
+
+    # function:     check_legality()
+    # description:  check legality of readin topology
+    # parameters:   none
+    # return value: None:   legal topology
+    #               str:    illegal topology, error string returned
+    def check_legality(self):
+        # check whether the topology is undirectional indeed if it claimed it does not support bilateral link
+        # (check whether the topo adjacency matrix is symmetric)
+        if not self.bilateral:
+            if not np.allclose(self.topo_matrix, self.topo_matrix.T, rtol=1e-05, atol=1e-08):
+                return "illgeal topology since adjacency matrix isn't symmetric yet bilateral link is not supported"
+        return None

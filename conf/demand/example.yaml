@@ -1,0 +1,9 @@
+demand:
+  amount: 1
+  pairs:
+    - src: 0
+      dest: 1
+      demand: 1
+    - src: 1
+      dest: 0
+      demand: 1

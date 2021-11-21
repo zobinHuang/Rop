@@ -1,3 +1,0 @@
-root - INFO - read topology file from ./conf/topo/example.yaml
-root - WARNING - the specific size of topology (i.e. 2) does not macth the number of nodes, use the actual nodes amount (i.e. 4) instead
-root - INFO - read demand file from ./conf/demand/example.yaml

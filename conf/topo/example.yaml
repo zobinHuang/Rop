@@ -1,10 +1,16 @@
 topo:
+  # size of topology
   size: 4
+
+  # whether bilateral link supported
+  bilateral: true
+
+  # node matrix
   nodes:
-    - id: 0
-      neighbor: 
-        - peer: 1
-          weight: 3
+    - id: 0         # id of current node
+      neighbor:     # neighbor of current node
+        - peer: 1   # index of neighbor node
+          weight: 3 # link weight (capacity)
         - peer: 2
           weight: 1
         - peer: 3
