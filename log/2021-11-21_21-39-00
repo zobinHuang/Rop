@@ -1,0 +1,2 @@
+root - INFO - read topology file from ./conf/topo/example.yaml
+root - INFO - read demand file from ./conf/demand/example.yaml

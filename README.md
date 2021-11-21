@@ -15,9 +15,10 @@ conda activate ./env
 2. install [**cvxpy**](https://www.cvxpy.org/#) library
 
 ```bash
-conda install -c conda-forge cvxpy
+
+conda install -c conda-forge cvxpy pyyaml
 ```
 
 ## Usage
 
-## utils 里面放生成 topo 和 demand 的工具代码
+tools 里面放生成 topo 和 demand 的工具代码
